@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thang Ngo Hair Studio - Đặt Lịch Làm Tóc Trực Tuyến</title>
+  <!-- Google Fonts: Playfair Display & Be Vietnam Pro (Chuẩn 100% tiếng Việt) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Be Vietnam Pro"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#FAF8F5] text-stone-900 min-h-screen flex flex-col font-sans antialiased selection:bg-stone-800 selection:text-white">
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="bg-stone-900 text-stone-300 text-xs py-2 px-4 text-center tracking-wider flex justify-center items-center gap-2">
+    <span>✦ Ưu đãi tháng này: Tặng liệu trình gội xả thảo dược cao cấp khi đặt lịch trước qua website</span>
+    <span class="hidden md:inline text-stone-500">|</span>
+    <span class="hidden md:inline text-stone-400">Hotline: 0988 123 456</span>
+  </div>
+
+  <!-- NAVIGATION BAR -->
+  <header class="sticky top-0 z-40 bg-[#FAF8F5]/90 backdrop-blur-md border-b border-stone-200/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- LOGO -->
+      <a href="#home" class="flex flex-col">
+        <span class="font-serif text-2xl md:text-3xl font-bold tracking-tight text-stone-900">THANG NGO</span>
+        <span class="text-[9px] tracking-[0.28em] text-stone-500 font-semibold uppercase -mt-1">HAIR STUDIO • HÀ NỘI</span>
+      </a>
+
+      <!-- DESKTOP NAV -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-stone-700">
+        <a href="#services" class="hover:text-stone-950 transition-colors">Dịch Vụ & Bảng Giá</a>
+        <a href="#stylists" class="hover:text-stone-950 transition-colors">Đội Ngũ Stylist</a>
+        <a href="#about" class="hover:text-stone-950 transition-colors">Về Studio</a>
+        <a href="#lookup" class="hover:text-stone-950 transition-colors flex items-center gap-1.5">
+          <i data-lucide="search" class="w-3.5 h-3.5"></i>
+          Tra Cứu Lịch
+        </a>
+      </nav>
+
+      <!-- ACTIONS -->
+      <div class="flex items-center gap-3">
+        <!-- CTA Button -->
+        <a href="#booking-section" class="bg-stone-900 hover:bg-stone-800 text-stone-50 text-xs sm:text-sm font-medium px-5 py-2.5 rounded-full transition-all duration-200 shadow-sm hover:shadow flex items-center gap-2">
+          <span>Đặt Lịch Ngay</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="btnMobileMenu" class="lg:hidden p-2 text-stone-700 hover:text-stone-950">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Dropdown -->
+    <div id="mobileMenu" class="hidden lg:hidden border-b border-stone-200 bg-[#FAF8F5] px-6 py-4 space-y-3">
+      <a href="#services" class="block text-stone-700 hover:text-stone-950 font-medium py-1">Dịch Vụ & Bảng Giá</a>
+      <a href="#stylists" class="block text-stone-700 hover:text-stone-950 font-medium py-1">Đội Ngũ Stylist</a>
+      <a href="#about" class="block text-stone-700 hover:text-stone-950 font-medium py-1">Về Studio</a>
+      <a href="#lookup" class="block text-stone-700 hover:text-stone-950 font-medium py-1">Tra Cứu Lịch Hẹn</a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden border-b border-stone-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Content -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stone-300 bg-white/60 text-stone-700 text-xs tracking-wider uppercase">
+            <span class="w-1.5 h-1.5 rounded-full bg-stone-900"></span>
+            Không Gian Tối Giản • Trải Nghiệm Thượng Lưu
+          </div>
+          
+          <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-stone-950 leading-[1.15] font-normal tracking-tight">
+            Nghệ thuật kiến tạo vẻ đẹp từ <span class="italic font-medium">sự tinh tế nguyên bản</span>
+          </h1>
+          
+          <p class="text-stone-600 text-base sm:text-lg leading-relaxed max-w-2xl font-light">
+            Tại <strong class="font-medium text-stone-900">Thang Ngo Hair Studio</strong>, mỗi đường kéo không đơn thuần là cắt tóc, mà là sự lắng nghe và cá nhân hoá để tôn vinh trọn vẹn nét đẹp tự nhiên của riêng bạn.
+          </p>
+
+          <!-- Badges -->
+          <div class="grid grid-cols-3 gap-4 pt-2 border-t border-stone-200/80 max-w-lg">
+            <div>
+              <div class="font-serif text-2xl sm:text-3xl font-bold text-stone-900">10+</div>
+              <div class="text-xs text-stone-500 uppercase tracking-wider">Năm Kinh Nghiệm</div>
+            </div>
+            <div>
+              <div class="font-serif text-2xl sm:text-3xl font-bold text-stone-900">100%</div>
+              <div class="text-xs text-stone-500 uppercase tracking-wider">Hóa Phẩm Organic</div>
+            </div>
+            <div>
+              <div class="font-serif text-2xl sm:text-3xl font-bold text-stone-900">4.9 ★</div>
+              <div class="text-xs text-stone-500 uppercase tracking-wider">Từ 1.200+ Khách Hàng</div>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-4">
+            <a href="#booking-section" class="bg-stone-900 hover:bg-stone-800 text-white px-7 py-3.5 rounded-full text-sm font-medium tracking-wide transition shadow-sm hover:shadow flex items-center gap-2">
+              <span>Đặt Lịch Làm Tóc</span>
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+            </a>
+            <a href="#services" class="border border-stone-300 hover:border-stone-900 bg-white/80 hover:bg-white text-stone-800 px-7 py-3.5 rounded-full text-sm font-medium tracking-wide transition">
+              Xem Bảng Giá & Dịch Vụ
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Visual Showcase -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md">
+            <!-- Main Editorial Image -->
+            <div class="aspect-[3/4] rounded-2xl overflow-hidden border border-stone-200 shadow-xl bg-stone-100">
+              <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&auto=format&fit=crop&q=80" 
+                   alt="Thang Ngo Hair Studio Interior" 
+                   class="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700">
+            </div>
+
+            <!-- Floating Studio Card -->
+            <div class="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-sm border border-stone-200 rounded-xl p-4 shadow-lg max-w-xs">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-stone-900 text-white flex items-center justify-center font-serif font-bold">TN</div>
+                <div>
+                  <div class="text-xs font-semibold text-stone-900">Founder Thắng Ngô</div>
+                  <div class="text-[11px] text-stone-500">Master Stylist & Director</div>
+                </div>
+              </div>
+              <p class="text-[11px] text-stone-600 mt-2 italic">"Kiểu tóc đẹp nhất là kiểu tóc khiến bạn tự tin là chính mình."</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section id="services" class="py-20 bg-white border-b border-stone-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs uppercase tracking-[0.25em] text-stone-500 font-semibold">Menu & Pricing</span>
+        <h2 class="font-serif text-3xl sm:text-4xl text-stone-900 mt-2 font-normal">Dịch Vụ & Bảng Giá Niêm Yết</h2>
+        <p class="text-stone-600 mt-3 text-sm sm:text-base font-light">
+          Mức giá minh bạch, cam kết sử dụng 100% dòng sản phẩm chính hãng từ L'Oréal Professionnel, Davines và Olaplex.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex flex-wrap justify-center gap-2 mb-12" id="serviceCategoryFilter">
+        <!-- Rendered via JS -->
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="servicesGrid">
+        <!-- Rendered via JS -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STYLISTS SHOWCASE SECTION -->
+  <section id="stylists" class="py-20 bg-[#FAF8F5] border-b border-stone-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs uppercase tracking-[0.25em] text-stone-500 font-semibold">Our Experts</span>
+        <h2 class="font-serif text-3xl sm:text-4xl text-stone-900 mt-2 font-normal">Đội Ngũ Nghệ Nhân Tóc</h2>
+        <p class="text-stone-600 mt-3 text-sm sm:text-base font-light">
+          Được đào tạo bài bản theo tiêu chuẩn quốc tế, tận tâm trong từng đường kéo và kỹ thuật xử lý màu.
+        </p>
+      </div>
+
+      <!-- Stylists Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="stylistsGrid">
+        <!-- Rendered via JS -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BOOKING WIZARD SECTION (CENTERPIECE) -->
+  <section id="booking-section" class="py-20 bg-white border-b border-stone-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stone-300 bg-stone-100/70 text-stone-700 text-xs tracking-wider uppercase mb-3">
+          <i data-lucide="clock" class="w-3.5 h-3.5 text-stone-900"></i>
+          Quy Trình 4 Bước Đơn Giản
+        </div>
+        <h2 class="font-serif text-3xl sm:text-4xl text-stone-900 font-normal">Đặt Lịch Hẹn Trực Tuyến</h2>
+        <p class="text-stone-600 text-sm sm:text-base mt-2 font-light">
+          Chỉ mất 1 phút để chọn khung giờ và chuyên viên bạn mong muốn.
+        </p>
+      </div>
+
+      <!-- Wizard Step Indicator -->
+      <div class="grid grid-cols-4 gap-2 mb-10 text-center relative max-w-3xl mx-auto">
+        <!-- Step 1 -->
+        <div class="step-item active flex flex-col items-center gap-2" data-step="1">
+          <div class="step-number w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-stone-900 flex items-center justify-center font-semibold text-xs sm:text-sm transition-all duration-300">1</div>
+          <span class="text-[11px] sm:text-xs font-medium text-stone-800">Dịch Vụ</span>
+        </div>
+        <!-- Step 2 -->
+        <div class="step-item flex flex-col items-center gap-2" data-step="2">
+          <div class="step-number w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-stone-300 text-stone-400 flex items-center justify-center font-semibold text-xs sm:text-sm transition-all duration-300">2</div>
+          <span class="text-[11px] sm:text-xs font-medium text-stone-500">Stylist</span>
+        </div>
+        <!-- Step 3 -->
+        <div class="step-item flex flex-col items-center gap-2" data-step="3">
+          <div class="step-number w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-stone-300 text-stone-400 flex items-center justify-center font-semibold text-xs sm:text-sm transition-all duration-300">3</div>
+          <span class="text-[11px] sm:text-xs font-medium text-stone-500">Ngày & Giờ</span>
+        </div>
+        <!-- Step 4 -->
+        <div class="step-item flex flex-col items-center gap-2" data-step="4">
+          <div class="step-number w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-stone-300 text-stone-400 flex items-center justify-center font-semibold text-xs sm:text-sm transition-all duration-300">4</div>
+          <span class="text-[11px] sm:text-xs font-medium text-stone-500">Xác Nhận</span>
+        </div>
+      </div>
+
+      <!-- Booking Main Box -->
+      <div class="bg-[#FAF8F5] border border-stone-200/90 rounded-2xl p-6 sm:p-8 shadow-sm">
+        
+        <!-- STEP 1: CHOOSE SERVICES -->
+        <div id="step1Container" class="wizard-step space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-stone-200">
+            <div>
+              <h3 class="font-serif text-2xl text-stone-900 font-medium">Bước 1: Chọn Dịch Vụ</h3>
+              <p class="text-xs sm:text-sm text-stone-500">Bạn có thể chọn một hoặc nhiều dịch vụ kết hợp cùng lúc.</p>
+            </div>
+            <div class="text-xs bg-white px-3 py-1.5 rounded-full border border-stone-200 text-stone-600 inline-block self-start">
+              Đã chọn: <strong id="selectedServiceCount" class="text-stone-900">0</strong> dịch vụ
+            </div>
+          </div>
+
+          <!-- Service List for Selection -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="bookingServiceList">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+
+        <!-- STEP 2: CHOOSE STYLIST -->
+        <div id="step2Container" class="wizard-step hidden space-y-6">
+          <div class="pb-4 border-b border-stone-200">
+            <h3 class="font-serif text-2xl text-stone-900 font-medium">Bước 2: Chọn Chuyên Viên (Stylist)</h3>
+            <p class="text-xs sm:text-sm text-stone-500">Lựa chọn chuyên gia bạn tin tưởng hoặc để chúng tôi xếp lịch linh hoạt nhất.</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="bookingStylistList">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+
+        <!-- STEP 3: CHOOSE DATE & TIME -->
+        <div id="step3Container" class="wizard-step hidden space-y-6">
+          <div class="pb-4 border-b border-stone-200">
+            <h3 class="font-serif text-2xl text-stone-900 font-medium">Bước 3: Chọn Ngày & Giờ Hẹn</h3>
+            <p class="text-xs sm:text-sm text-stone-500">Chúng tôi luôn giữ chỗ ưu tiên trong vòng 15 phút từ giờ đã chọn.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+            <!-- Date Selection -->
+            <div class="md:col-span-5 space-y-4">
+              <label class="block text-xs font-bold uppercase tracking-wider text-stone-700">Chọn Ngày Làm Tóc</label>
+              
+              <!-- Quick Date Pills -->
+              <div class="grid grid-cols-3 gap-2" id="quickDatePills">
+                <!-- Populated via JS -->
+              </div>
+
+              <!-- Native Date Input for Custom Date -->
+              <div class="pt-2">
+                <label for="customDatePicker" class="text-xs text-stone-500 block mb-1">Hoặc chọn ngày khác:</label>
+                <input type="date" id="customDatePicker" class="w-full bg-white border border-stone-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-stone-900">
+              </div>
+            </div>
+
+            <!-- Time Slots -->
+            <div class="md:col-span-7 space-y-4">
+              <div class="flex items-center justify-between">
+                <label class="block text-xs font-bold uppercase tracking-wider text-stone-700">Khung Giờ Còn Trống</label>
+                <span class="text-xs text-stone-500" id="selectedDateDisplay">Hôm nay</span>
+              </div>
+
+              <div class="grid grid-cols-3 sm:grid-cols-4 gap-2.5" id="bookingTimeSlotGrid">
+                <!-- Populated via JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4: CUSTOMER INFO & CONFIRMATION -->
+        <div id="step4Container" class="wizard-step hidden space-y-6">
+          <div class="pb-4 border-b border-stone-200">
+            <h3 class="font-serif text-2xl text-stone-900 font-medium">Bước 4: Thông Tin Đặt Lịch</h3>
+            <p class="text-xs sm:text-sm text-stone-500">Vui lòng để lại số điện thoại chính xác để nhận mã xác nhận lịch hẹn.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <!-- Customer Form -->
+            <div class="md:col-span-7 space-y-4">
+              <div>
+                <label for="custName" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1.5">Họ và Tên <span class="text-rose-600">*</span></label>
+                <input type="text" id="custName" placeholder="Ví dụ: Nguyễn Văn A" class="w-full bg-white border border-stone-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-stone-900 focus:border-transparent transition">
+              </div>
+
+              <div>
+                <label for="custPhone" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1.5">Số Điện Thoại <span class="text-rose-600">*</span></label>
+                <input type="tel" id="custPhone" placeholder="Ví dụ: 0912 345 678" class="w-full bg-white border border-stone-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-stone-900 focus:border-transparent transition">
+              </div>
+
+              <div>
+                <label for="custNote" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1.5">Ghi Chú Hoặc Yêu Cầu Đặc Biệt (Không bắt buộc)</label>
+                <textarea id="custNote" rows="3" placeholder="Ví dụ: Tóc mỏng, đã từng tẩy, muốn nhuộm tone lạnh trầm..." class="w-full bg-white border border-stone-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-stone-900 focus:border-transparent transition"></textarea>
+              </div>
+            </div>
+
+            <!-- Booking Summary Card -->
+            <div class="md:col-span-5">
+              <div class="bg-white border border-stone-200 rounded-xl p-5 space-y-4 shadow-sm">
+                <div class="font-serif text-lg text-stone-900 font-semibold border-b border-stone-200 pb-3 flex items-center justify-between">
+                  <span>Tóm Tắt Lịch Hẹn</span>
+                  <span class="text-xs font-sans font-normal text-stone-500 uppercase tracking-wider">Studio Review</span>
+                </div>
+
+                <div class="space-y-2.5 text-xs">
+                  <div class="flex justify-between">
+                    <span class="text-stone-500">Stylist:</span>
+                    <span class="font-medium text-stone-900 text-right" id="summaryStylist">Chưa chọn</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-stone-500">Thời gian:</span>
+                    <span class="font-medium text-stone-900 text-right" id="summaryDateTime">Chưa chọn</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-stone-500">Dự kiến hoàn thành:</span>
+                    <span class="font-medium text-stone-900" id="summaryDuration">0 phút</span>
+                  </div>
+                </div>
+
+                <div class="border-t border-stone-100 pt-3">
+                  <div class="text-xs text-stone-500 mb-1.5">Dịch vụ đã chọn:</div>
+                  <div id="summaryServicesList" class="space-y-1 text-xs font-medium text-stone-800">
+                    <!-- Populated via JS -->
+                  </div>
+                </div>
+
+                <div class="border-t border-stone-200 pt-3 flex items-baseline justify-between">
+                  <span class="text-xs uppercase font-bold text-stone-600">Tổng Chi Phí Dự Tính</span>
+                  <span class="font-serif text-2xl font-bold text-stone-900" id="summaryTotalPrice">0 ₫</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wizard Nav Actions -->
+        <div class="flex items-center justify-between pt-6 border-t border-stone-200 mt-8">
+          <button id="btnPrevStep" class="hidden text-xs sm:text-sm font-medium text-stone-600 hover:text-stone-900 px-4 py-2 rounded-lg border border-stone-300 hover:bg-stone-50 transition flex items-center gap-1.5">
+            <i data-lucide="chevron-left" class="w-4 h-4"></i>
+            <span>Quay lại</span>
+          </button>
+
+          <div class="ml-auto flex items-center gap-3">
+            <button id="btnNextStep" class="bg-stone-900 hover:bg-stone-800 text-white text-xs sm:text-sm font-medium px-6 py-2.5 rounded-full transition flex items-center gap-2 shadow-sm">
+              <span id="btnNextText">Tiếp tục: Chọn Stylist</span>
+              <i data-lucide="chevron-right" class="w-4 h-4" id="btnNextIcon"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- APPOINTMENT LOOKUP SECTION -->
+  <section id="lookup" class="py-16 bg-[#FAF8F5] border-b border-stone-200/60">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <span class="text-xs uppercase tracking-[0.25em] text-stone-500 font-semibold">Tra Cứu Lịch Hẹn</span>
+        <h2 class="font-serif text-2xl sm:text-3xl text-stone-900 mt-1 font-normal">Quản Lý Buổi Hẹn Của Bạn</h2>
+        <p class="text-stone-600 text-xs sm:text-sm mt-1">
+          Nhập số điện thoại bạn đã dùng khi đặt lịch để tra cứu trạng thái hoặc huỷ hẹn.
+        </p>
+      </div>
+
+      <div class="bg-white border border-stone-200 rounded-2xl p-6 shadow-sm">
+        <form id="lookupForm" class="flex flex-col sm:flex-row gap-3">
+          <div class="relative flex-1">
+            <i data-lucide="phone" class="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+            <input type="tel" id="lookupPhone" placeholder="Nhập số điện thoại đã đặt lịch..." class="w-full bg-stone-50 border border-stone-200 rounded-xl pl-10 pr-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-stone-900 focus:bg-white transition" required>
+          </div>
+          <button type="submit" class="bg-stone-900 hover:bg-stone-800 text-white px-6 py-3 rounded-xl text-sm font-medium transition flex items-center justify-center gap-2">
+            <i data-lucide="search" class="w-4 h-4"></i>
+            <span>Tra Cứu</span>
+          </button>
+        </form>
+
+        <!-- Lookup Results Container -->
+        <div id="lookupResults" class="mt-6 hidden divide-y divide-stone-100 border-t border-stone-100 pt-4">
+          <!-- Populated via JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT & PHILOSOPHY SECTION -->
+  <section id="about" class="py-20 bg-white border-b border-stone-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="text-xs uppercase tracking-[0.25em] text-stone-500 font-semibold">Triết Lý Làm Đẹp</span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-stone-900 mt-2 font-normal leading-snug">
+            Tối Giản Trong Thiết Kế, <br class="hidden sm:inline">Tận Tụy Trong Trải Nghiệm
+          </h2>
+          <div class="mt-6 space-y-4 text-stone-600 text-sm sm:text-base font-light leading-relaxed">
+            <p>
+              Được thành lập bởi Master Stylist Thắng Ngô, studio hướng tới trải nghiệm làm tóc riêng tư, không ồn ào xô bồ. Chúng tôi dành thời gian tối đa để lắng nghe thói quen chăm sóc tóc và phong cách sống hàng ngày của từng khách hàng trước khi bắt đầu.
+            </p>
+            <p>
+              Tất cả hoá phẩm sử dụng tại Thang Ngo Hair Studio đều được kiểm định nguồn gốc xuất xứ, ưu tiên các thành phần tự nhiên hữu cơ giúp giữ gìn cấu trúc tóc khoẻ mạnh lâu dài từ sâu bên trong.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-6 mt-8">
+            <div class="border-l-2 border-stone-900 pl-4">
+              <h4 class="font-medium text-stone-900 text-sm">Không Gian Yên Tĩnh</h4>
+              <p class="text-xs text-stone-500 mt-1">Thưởng thức trà thảo mộc và âm nhạc du dương trong suốt quá trình chăm sóc.</p>
+            </div>
+            <div class="border-l-2 border-stone-900 pl-4">
+              <h4 class="font-medium text-stone-900 text-sm">Bảo Hành 7 Ngày</h4>
+              <p class="text-xs text-stone-500 mt-1">Hỗ trợ chỉnh sửa form hoặc dặm chân miễn phí trong 7 ngày đầu tiên.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="aspect-[4/5] rounded-2xl overflow-hidden border border-stone-200">
+            <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=600&auto=format&fit=crop&q=80" alt="Salon styling" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-[4/5] rounded-2xl overflow-hidden border border-stone-200 mt-8">
+            <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600&auto=format&fit=crop&q=80" alt="Hair treatment" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-stone-900 text-stone-400 text-xs py-14 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10 pb-10 border-b border-stone-800">
+        
+        <!-- Col 1: Brand -->
+        <div class="md:col-span-1 space-y-3">
+          <div class="font-serif text-2xl text-white font-bold tracking-tight">THANG NGO</div>
+          <div class="text-[10px] tracking-[0.2em] text-stone-400 uppercase -mt-2">HAIR STUDIO</div>
+          <p class="text-stone-400 text-xs leading-relaxed">
+            Không gian chăm sóc và tạo kiểu tóc tối giản, mang lại vẻ đẹp tự nhiên và đẳng cấp.
+          </p>
+        </div>
+
+        <!-- Col 2: Info -->
+        <div class="space-y-2">
+          <div class="text-white uppercase font-bold tracking-wider text-xs mb-2">Địa Chỉ & Liên Hệ</div>
+          <p class="flex items-start gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4 text-stone-300 shrink-0 mt-0.5"></i>
+            <span>Số 1 Ngách 91/40, Nguyễn Chí Thanh, Hà Nội</span>
+          </p>
+          <p class="flex items-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4 text-stone-300 shrink-0"></i>
+            <span>Hotline: 0988 123 456</span>
+          </p>
+          <p class="flex items-center gap-2">
+            <i data-lucide="mail" class="w-4 h-4 text-stone-300 shrink-0"></i>
+            <span>contact@thangngohair.vn</span>
+          </p>
+        </div>
+
+        <!-- Col 3: Hours -->
+        <div class="space-y-2">
+          <div class="text-white uppercase font-bold tracking-wider text-xs mb-2">Giờ Mở Cửa</div>
+          <p>Thứ 2 - Thứ 6: 09:00 - 20:30</p>
+          <p>Thứ 7 - Chủ Nhật: 08:30 - 21:00</p>
+          <p class="text-stone-400 text-[11px] pt-1">* Khuyến khích đặt hẹn trước để có trải nghiệm tốt nhất.</p>
+        </div>
+
+        <!-- Col 4: Quick Links -->
+        <div class="space-y-2">
+          <div class="text-white uppercase font-bold tracking-wider text-xs mb-2">Liên Kết Nhanh</div>
+          <ul class="space-y-1.5">
+            <li><a href="#services" class="hover:text-white transition">Bảng giá dịch vụ</a></li>
+            <li><a href="#stylists" class="hover:text-white transition">Đội ngũ Stylist</a></li>
+            <li><a href="#booking-section" class="hover:text-white transition">Đặt lịch hẹn trực tuyến</a></li>
+            <li><a href="#lookup" class="hover:text-white transition">Kiểm tra lịch đã đặt</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between text-stone-400 text-[11px] gap-4">
+        <div>© 2026 Thang Ngo Hair Studio. All rights reserved.</div>
+        <div class="flex items-center gap-4">
+          <a href="#" class="hover:text-stone-200">Chính Sách Bảo Mật</a>
+          <span>•</span>
+          <a href="#" class="hover:text-stone-200">Điều Khoản Dịch Vụ</a>
+          <span>•</span>
+          <button id="btnSecretAdmin" class="text-stone-400 hover:text-white transition flex items-center gap-1 font-medium" title="Khu vực dành riêng cho chủ salon (Yêu cầu mật khẩu)">
+            <i data-lucide="lock" class="w-3 h-3"></i>
+            <span>Dành Cho Salon</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================== -->
+  <!-- MODAL: SUCCESSFUL BOOKING CONFIRMATION TICKET  -->
+  <!-- ============================================== -->
+  <div id="bookingSuccessModal" class="fixed inset-0 z-50 bg-stone-950/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white max-w-md w-full rounded-2xl overflow-hidden shadow-2xl animate-fade-in border border-stone-200">
+      
+      <div class="p-6 text-center bg-[#FAF8F5] border-b border-stone-200 relative">
+        <button id="btnCloseModal" class="absolute top-4 right-4 text-stone-400 hover:text-stone-700 p-1">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+
+        <div class="w-12 h-12 rounded-full bg-stone-900 text-white flex items-center justify-center mx-auto mb-3 shadow">
+          <i data-lucide="check" class="w-6 h-6"></i>
+        </div>
+        <h3 class="font-serif text-2xl text-stone-900 font-semibold">Đặt Lịch Thành Công!</h3>
+        <p class="text-xs text-stone-500 mt-1">Salon đã nhận được thông tin và sẽ giữ chỗ cho bạn.</p>
+      </div>
+
+      <!-- Ticket Receipt -->
+      <div class="p-6 space-y-4 text-xs">
+        <div class="bg-[#FAF8F5] border border-dashed border-stone-300 rounded-xl p-4 space-y-2.5">
+          <div class="flex justify-between items-center pb-2 border-b border-stone-200">
+            <span class="text-stone-500">Mã Lịch Hẹn:</span>
+            <span class="font-mono font-bold text-sm text-stone-900 bg-white px-2 py-0.5 rounded border border-stone-200" id="ticketBookingId">TN-0000</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span class="text-stone-500">Khách Hàng:</span>
+            <span class="font-medium text-stone-900" id="ticketCustName">-</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span class="text-stone-500">Số Điện Thoại:</span>
+            <span class="font-medium text-stone-900" id="ticketCustPhone">-</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span class="text-stone-500">Chuyên Viên:</span>
+            <span class="font-medium text-stone-900" id="ticketStylist">-</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span class="text-stone-500">Thời Gian:</span>
+            <span class="font-medium text-stone-900" id="ticketDateTime">-</span>
+          </div>
+
+          <div class="border-t border-stone-200 pt-2">
+            <div class="text-stone-500 mb-1">Dịch Vụ:</div>
+            <div class="font-medium text-stone-900 text-[11px]" id="ticketServices">-</div>
+          </div>
+
+          <div class="border-t border-stone-200 pt-2 flex justify-between items-baseline">
+            <span class="font-bold text-stone-700">Tổng Chi Phí Dự Kiến:</span>
+            <span class="font-serif text-base font-bold text-stone-900" id="ticketTotal">0 ₫</span>
+          </div>
+        </div>
+
+        <div class="text-[11px] text-stone-500 text-center leading-relaxed">
+          📍 Địa chỉ: Số 1 Ngách 91/40, Nguyễn Chí Thanh, Hà Nội.<br>
+          Nếu có thay đổi, vui lòng gọi Hotline <strong>0988 123 456</strong> trước 2 tiếng.
+        </div>
+
+        <div class="flex gap-2 pt-2">
+          <button onclick="window.print()" class="flex-1 border border-stone-300 hover:bg-stone-50 text-stone-700 py-2.5 rounded-xl font-medium transition flex items-center justify-center gap-1.5">
+            <i data-lucide="printer" class="w-4 h-4"></i>
+            <span>In / Lưu Vé</span>
+          </button>
+          <button id="btnDoneModal" class="flex-1 bg-stone-900 hover:bg-stone-800 text-white py-2.5 rounded-xl font-medium transition">
+            Hoàn Tất
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MODAL: XÁC THỰC MẬT KHẨU QUẢN TRỊ VIÊN (PIN)    -->
+  <!-- ============================================== -->
+  <div id="adminAuthModal" class="fixed inset-0 z-50 bg-stone-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white max-w-sm w-full rounded-2xl p-6 shadow-2xl border border-stone-200 text-center space-y-4 animate-fade-in">
+      <div class="w-12 h-12 rounded-full bg-stone-900 text-amber-400 flex items-center justify-center mx-auto shadow">
+        <i data-lucide="shield-check" class="w-6 h-6"></i>
+      </div>
+      <div>
+        <h3 class="font-serif text-xl font-bold text-stone-900">Quản Trị Salon</h3>
+        <p class="text-xs text-stone-500 mt-1">Khu vực nội bộ. Vui lòng nhập mã PIN bảo mật để truy cập.</p>
+      </div>
+      <form id="adminPinForm" class="space-y-3">
+        <div>
+          <input type="password" id="adminPinInput" placeholder="Mã PIN (Mặc định: 8888)" maxlength="10" class="w-full text-center tracking-[0.3em] font-mono text-lg bg-stone-50 border border-stone-300 rounded-xl px-4 py-2.5 focus:bg-white focus:outline-none focus:ring-2 focus:ring-stone-900 transition" autofocus required>
+        </div>
+        <div id="adminPinError" class="text-rose-600 text-xs font-medium hidden">
+          Mã PIN không đúng! Vui lòng thử lại.
+        </div>
+        <div class="flex gap-2 pt-2">
+          <button type="button" id="btnCancelPin" class="flex-1 border border-stone-300 hover:bg-stone-50 text-stone-700 py-2.5 rounded-xl text-xs font-medium transition">
+            Huỷ Bỏ
+          </button>
+          <button type="submit" class="flex-1 bg-stone-900 hover:bg-stone-800 text-white py-2.5 rounded-xl text-xs font-medium transition">
+            Đăng Nhập
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MODAL: SALON ADMIN DASHBOARD (QUẢN LÝ ĐƠN HẸN)  -->
+  <!-- ============================================== -->
+  <div id="adminModal" class="fixed inset-0 z-50 bg-stone-950/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white max-w-5xl w-full h-[90vh] max-h-[850px] rounded-2xl overflow-hidden shadow-2xl flex flex-col border border-stone-200">
+      
+      <!-- Admin Header -->
+      <div class="p-6 bg-stone-900 text-white flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-stone-800 flex items-center justify-center text-amber-400">
+            <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="font-serif text-xl font-medium">Bảng Quản Trị Đặt Lịch Salon</h3>
+            <p class="text-xs text-stone-400">Thang Ngo Hair Studio - Hệ Thống Điều Phối Lịch Hẹn</p>
+          </div>
+        </div>
+
+        <button id="btnCloseAdmin" class="text-stone-400 hover:text-white p-2">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Admin Quick Stats -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 p-6 bg-[#FAF8F5] border-b border-stone-200">
+        <div class="bg-white p-4 rounded-xl border border-stone-200">
+          <div class="text-[11px] text-stone-500 uppercase tracking-wider font-medium">Tổng Lịch Hẹn</div>
+          <div class="font-serif text-2xl font-bold text-stone-900 mt-1" id="statTotalBookings">0</div>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-stone-200">
+          <div class="text-[11px] text-amber-600 uppercase tracking-wider font-medium">Chờ Xác Nhận</div>
+          <div class="font-serif text-2xl font-bold text-amber-600 mt-1" id="statPendingBookings">0</div>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-stone-200">
+          <div class="text-[11px] text-emerald-600 uppercase tracking-wider font-medium">Đã Xác Nhận</div>
+          <div class="font-serif text-2xl font-bold text-emerald-600 mt-1" id="statConfirmedBookings">0</div>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-stone-200">
+          <div class="text-[11px] text-stone-500 uppercase tracking-wider font-medium">Doanh Thu Dự Kiến</div>
+          <div class="font-serif text-xl font-bold text-stone-900 mt-1 truncate" id="statEstimatedRevenue">0 ₫</div>
+        </div>
+      </div>
+
+      <!-- Filter Controls & Actions -->
+      <div class="px-6 py-4 border-b border-stone-200 flex flex-wrap items-center justify-between gap-3 bg-white">
+        <div class="flex items-center gap-2">
+          <span class="text-xs text-stone-500 font-medium">Lọc Trạng Thái:</span>
+          <select id="adminStatusFilter" class="bg-stone-50 border border-stone-300 rounded-lg px-3 py-1.5 text-xs text-stone-800 focus:outline-none focus:ring-1 focus:ring-stone-900">
+            <option value="all">Tất cả trạng thái</option>
+            <option value="pending">Chờ xác nhận</option>
+            <option value="confirmed">Đã xác nhận</option>
+            <option value="completed">Đã hoàn thành</option>
+            <option value="cancelled">Đã huỷ</option>
+          </select>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button id="btnOpenNotificationSettings" class="text-xs px-3 py-1.5 bg-stone-900 hover:bg-stone-800 text-white rounded-lg transition flex items-center gap-1.5 shadow-sm" title="Cài đặt nhận thông báo về điện thoại">
+            <i data-lucide="bell" class="w-3.5 h-3.5 text-amber-400"></i>
+            <span>Cài Đặt Thông Báo (Telegram/Sheets)</span>
+          </button>
+          <button id="btnResetSampleData" class="text-xs px-3 py-1.5 border border-stone-300 text-stone-600 rounded-lg hover:bg-stone-50 transition" title="Khôi phục lại các đơn hẹn mẫu">
+            Khôi Phục Dữ Liệu
+          </button>
+        </div>
+      </div>
+
+      <!-- NOTIFICATION SETTINGS PANEL (COLLAPSIBLE) -->
+      <div id="notificationSettingsPanel" class="hidden p-6 bg-stone-50 border-b border-stone-200 text-xs space-y-4">
+        <div class="flex items-center justify-between pb-2 border-b border-stone-200">
+          <div>
+            <h4 class="font-serif text-base font-bold text-stone-900 flex items-center gap-2">
+              <i data-lucide="send" class="w-4 h-4 text-blue-500"></i>
+              <span>Cấu Hình Nhận Tin Nhắn Báo Khách Đặt Lịch Về Điện Thoại</span>
+            </h4>
+            <p class="text-stone-500 text-[11px] mt-0.5">Mỗi khi có khách bấm Đặt Lịch trên website, hệ thống sẽ tự động gửi tin nhắn báo tức thì về điện thoại của bạn.</p>
+          </div>
+          <button id="btnCloseNotificationSettings" class="text-stone-400 hover:text-stone-700 p-1">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-1">
+          <!-- 1. Telegram Setup -->
+          <div class="bg-white p-4 rounded-xl border border-stone-200 space-y-3 shadow-sm">
+            <div class="flex items-center justify-between">
+              <div class="font-bold text-stone-900 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                <span>1. Thông Báo Qua Telegram (Khuyên Dùng - Miễn Phí 100%)</span>
+              </div>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" id="chkTelegramEnabled" class="sr-only peer">
+                <div class="w-9 h-5 bg-stone-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-stone-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-stone-900"></div>
+              </label>
+            </div>
+
+            <div class="space-y-2">
+              <div>
+                <label class="block text-[11px] font-medium text-stone-600 mb-1">Telegram Bot Token:</label>
+                <input type="text" id="txtTelegramToken" placeholder="VD: 7123456789:AAHKq..." class="w-full bg-stone-50 border border-stone-300 rounded-lg px-3 py-2 text-xs focus:bg-white focus:outline-none focus:ring-1 focus:ring-stone-900 font-mono">
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-medium text-stone-600 mb-1">Telegram Chat ID (Cá nhân hoặc Nhóm Salon):</label>
+                <input type="text" id="txtTelegramChatId" placeholder="VD: 123456789 hoặc -100123456789" class="w-full bg-stone-50 border border-stone-300 rounded-lg px-3 py-2 text-xs focus:bg-white focus:outline-none focus:ring-1 focus:ring-stone-900 font-mono">
+              </div>
+            </div>
+
+            <div class="text-[10px] text-stone-500 bg-stone-50 p-2.5 rounded-lg border border-stone-200/80 leading-relaxed">
+              💡 <strong>Cách lấy trong 30 giây:</strong><br>
+              1. Mở Telegram, tìm bot <strong>@BotFather</strong> $\rightarrow$ gửi <code>/newbot</code> để lấy Token.<br>
+              2. Tìm bot <strong>@userinfobot</strong> $\rightarrow$ bấm Start để lấy Chat ID của bạn.
+            </div>
+
+            <div class="flex items-center gap-2 pt-1">
+              <button id="btnSaveTelegramSettings" class="bg-stone-900 hover:bg-stone-800 text-white px-3 py-1.5 rounded-lg font-medium transition text-xs">
+                Lưu Cài Đặt
+              </button>
+              <button id="btnTestTelegram" class="border border-stone-300 hover:bg-stone-100 text-stone-700 px-3 py-1.5 rounded-lg font-medium transition text-xs flex items-center gap-1">
+                <i data-lucide="bell" class="w-3.5 h-3.5 text-blue-500"></i>
+                <span>Gửi Thử Tin Nhắn</span>
+              </button>
+              <span id="telegramStatusMsg" class="text-[11px] text-stone-500"></span>
+            </div>
+          </div>
+
+          <!-- 2. Google Sheets Setup -->
+          <div class="bg-white p-4 rounded-xl border border-stone-200 space-y-3 shadow-sm">
+            <div class="flex items-center justify-between">
+              <div class="font-bold text-stone-900 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                <span>2. Tự Động Lưu Vào Google Sheets (Bảng Tính)</span>
+              </div>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" id="chkSheetsEnabled" class="sr-only peer">
+                <div class="w-9 h-5 bg-stone-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-stone-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-stone-900"></div>
+              </label>
+            </div>
+
+            <div>
+              <label class="block text-[11px] font-medium text-stone-600 mb-1">Google Apps Script Web App URL:</label>
+              <input type="url" id="txtSheetsWebhook" placeholder="VD: https://script.google.com/macros/s/.../exec" class="w-full bg-stone-50 border border-stone-300 rounded-lg px-3 py-2 text-xs focus:bg-white focus:outline-none focus:ring-1 focus:ring-stone-900 font-mono">
+            </div>
+
+            <div class="text-[10px] text-stone-500 bg-stone-50 p-2.5 rounded-lg border border-stone-200/80 leading-relaxed">
+              📊 Mỗi khi khách đặt lịch, 1 dòng dữ liệu (Tên, SĐT, Dịch vụ, Giờ hẹn, Tiền) sẽ được tự động ghi thêm vào Google Sheet để bạn và nhân viên cùng theo dõi.
+            </div>
+
+            <div class="pt-1">
+              <button id="btnSaveSheetsSettings" class="bg-stone-900 hover:bg-stone-800 text-white px-3 py-1.5 rounded-lg font-medium transition text-xs">
+                Lưu URL Google Sheets
+              </button>
+            </div>
+          </div>
+
+          <!-- 3. Security PIN Change -->
+          <div class="bg-white p-4 rounded-xl border border-stone-200 space-y-2.5 shadow-sm md:col-span-2">
+            <div class="font-bold text-stone-900 flex items-center gap-1.5 text-xs">
+              <i data-lucide="key" class="w-4 h-4 text-amber-500"></i>
+              <span>3. Đổi Mã PIN Bảo Mật Quản Trị Salon (Mặc định: 8888)</span>
+            </div>
+            <p class="text-[11px] text-stone-500">Mã PIN dùng để mở bảng quản lý. Hãy đổi mã PIN riêng của bạn để khách hàng tuyệt đối không thể truy cập.</p>
+            <div class="flex flex-col sm:flex-row items-center gap-3 pt-1">
+              <input type="password" id="txtNewAdminPin" placeholder="Nhập mã PIN mới (VD: 9999)" maxlength="10" class="bg-stone-50 border border-stone-300 rounded-lg px-3 py-2 text-xs focus:bg-white focus:outline-none focus:ring-1 focus:ring-stone-900 font-mono tracking-widest w-full sm:w-64">
+              <button id="btnSaveNewPin" class="bg-stone-900 hover:bg-stone-800 text-white px-4 py-2 rounded-lg font-medium transition text-xs whitespace-nowrap">
+                Đổi Mã PIN
+              </button>
+              <span id="pinChangeStatus" class="text-[11px] text-emerald-600 font-medium"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bookings Table -->
+      <div class="flex-1 overflow-auto p-6">
+        <table class="w-full text-left text-xs border-collapse">
+          <thead>
+            <tr class="border-b border-stone-200 text-stone-500 font-medium tracking-wider uppercase text-[10px]">
+              <th class="py-3 px-3">Mã Hẹn</th>
+              <th class="py-3 px-3">Khách Hàng</th>
+              <th class="py-3 px-3">Dịch Vụ</th>
+              <th class="py-3 px-3">Stylist</th>
+              <th class="py-3 px-3">Ngày & Giờ</th>
+              <th class="py-3 px-3 text-right">Tổng Tiền</th>
+              <th class="py-3 px-3 text-center">Trạng Thái</th>
+              <th class="py-3 px-3 text-center">Hành Động</th>
+            </tr>
+          </thead>
+          <tbody id="adminBookingsTableBody" class="divide-y divide-stone-100">
+            <!-- Populated via JS -->
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>

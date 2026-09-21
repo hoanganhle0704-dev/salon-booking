@@ -878,7 +878,7 @@ function closeAdminModal() {
 
 // Xác thực bảo mật Quản Trị Viên (Mã PIN)
 const ADMIN_PIN_KEY = "thang_ngo_salon_admin_pin";
-const DEFAULT_ADMIN_PIN = "8888";
+const DEFAULT_ADMIN_PIN = "250704";
 
 function getAdminPin() {
   return localStorage.getItem(ADMIN_PIN_KEY) || DEFAULT_ADMIN_PIN;

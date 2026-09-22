@@ -59,12 +59,6 @@
 
       <!-- ACTIONS -->
       <div class="flex items-center gap-3">
-        <!-- Admin Dashboard Toggle -->
-        <button id="btnOpenAdmin" class="text-xs px-3 py-2 border border-stone-300 rounded-full text-stone-600 hover:bg-stone-100 hover:text-stone-900 transition flex items-center gap-1.5" title="Mở bảng quản lý salon">
-          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-stone-700"></i>
-          <span class="hidden sm:inline">Quản Lý Salon</span>
-        </button>
-
         <!-- CTA Button -->
         <a href="#booking-section" class="bg-stone-900 hover:bg-stone-800 text-stone-50 text-xs sm:text-sm font-medium px-5 py-2.5 rounded-full transition-all duration-200 shadow-sm hover:shadow flex items-center gap-2">
           <span>Đặt Lịch Ngay</span>
@@ -535,6 +529,11 @@
           <a href="#" class="hover:text-stone-200">Chính Sách Bảo Mật</a>
           <span>•</span>
           <a href="#" class="hover:text-stone-200">Điều Khoản Dịch Vụ</a>
+          <span>•</span>
+          <button id="btnSecretAdmin" class="text-stone-400 hover:text-white transition flex items-center gap-1 font-medium" title="Khu vực dành riêng cho chủ salon (Yêu cầu mật khẩu)">
+            <i data-lucide="lock" class="w-3 h-3"></i>
+            <span>Dành Cho Salon</span>
+          </button>
         </div>
       </div>
     </div>
@@ -613,6 +612,37 @@
         </div>
       </div>
 
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MODAL: XÁC THỰC MẬT KHẨU QUẢN TRỊ VIÊN (PIN)    -->
+  <!-- ============================================== -->
+  <div id="adminAuthModal" class="fixed inset-0 z-50 bg-stone-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white max-w-sm w-full rounded-2xl p-6 shadow-2xl border border-stone-200 text-center space-y-4 animate-fade-in">
+      <div class="w-12 h-12 rounded-full bg-stone-900 text-amber-400 flex items-center justify-center mx-auto shadow">
+        <i data-lucide="shield-check" class="w-6 h-6"></i>
+      </div>
+      <div>
+        <h3 class="font-serif text-xl font-bold text-stone-900">Quản Trị Salon</h3>
+        <p class="text-xs text-stone-500 mt-1">Khu vực nội bộ. Vui lòng nhập mã PIN bảo mật để truy cập.</p>
+      </div>
+      <form id="adminPinForm" class="space-y-3">
+        <div>
+          <input type="password" id="adminPinInput" placeholder="••••••••" maxlength="10" class="w-full text-center tracking-[0.3em] font-mono text-lg bg-stone-50 border border-stone-300 rounded-xl px-4 py-2.5 focus:bg-white focus:outline-none focus:ring-2 focus:ring-stone-900 transition" autofocus required>
+        </div>
+        <div id="adminPinError" class="text-rose-600 text-xs font-medium hidden">
+          Mã PIN không đúng! Vui lòng thử lại.
+        </div>
+        <div class="flex gap-2 pt-2">
+          <button type="button" id="btnCancelPin" class="flex-1 border border-stone-300 hover:bg-stone-50 text-stone-700 py-2.5 rounded-xl text-xs font-medium transition">
+            Huỷ Bỏ
+          </button>
+          <button type="submit" class="flex-1 bg-stone-900 hover:bg-stone-800 text-white py-2.5 rounded-xl text-xs font-medium transition">
+            Đăng Nhập
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 
@@ -768,6 +798,22 @@
               <button id="btnSaveSheetsSettings" class="bg-stone-900 hover:bg-stone-800 text-white px-3 py-1.5 rounded-lg font-medium transition text-xs">
                 Lưu URL Google Sheets
               </button>
+            </div>
+          </div>
+
+          <!-- 3. Security PIN Change -->
+          <div class="bg-white p-4 rounded-xl border border-stone-200 space-y-2.5 shadow-sm md:col-span-2">
+            <div class="font-bold text-stone-900 flex items-center gap-1.5 text-xs">
+              <i data-lucide="key" class="w-4 h-4 text-amber-500"></i>
+              <span>3. Đổi Mã PIN Bảo Mật Quản Trị Salon</span>
+            </div>
+            <p class="text-[11px] text-stone-500">Mã PIN dùng để mở bảng quản lý. Hãy đổi mã PIN riêng của bạn để khách hàng tuyệt đối không thể truy cập.</p>
+            <div class="flex flex-col sm:flex-row items-center gap-3 pt-1">
+              <input type="password" id="txtNewAdminPin" placeholder="Nhập mã PIN mới (VD: 9999)" maxlength="10" class="bg-stone-50 border border-stone-300 rounded-lg px-3 py-2 text-xs focus:bg-white focus:outline-none focus:ring-1 focus:ring-stone-900 font-mono tracking-widest w-full sm:w-64">
+              <button id="btnSaveNewPin" class="bg-stone-900 hover:bg-stone-800 text-white px-4 py-2 rounded-lg font-medium transition text-xs whitespace-nowrap">
+                Đổi Mã PIN
+              </button>
+              <span id="pinChangeStatus" class="text-[11px] text-emerald-600 font-medium"></span>
             </div>
           </div>
         </div>

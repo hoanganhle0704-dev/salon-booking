@@ -56,7 +56,7 @@ async function loadCloud(){
   setCloudStatus(true,user?.email||"",state.access.access_role);
   renderAll();
   const first=allowedViews()[0];
-  if(first&&!allowedViews().includes($(".nav-item.active")[0]?.dataset.view))showView(first);
+  if(first&&!allowedViews().includes($(".nav-item.active")?.dataset.view))showView(first);
   return true
 }
 function subscribeRealtime(){supabase.channel("salonsync").on("postgres_changes",{event:"*",schema:"public",table:"staff"},loadCloud).on("postgres_changes",{event:"*",schema:"public",table:"services"},loadCloud).on("postgres_changes",{event:"*",schema:"public",table:"invoices"},loadCloud).on("postgres_changes",{event:"*",schema:"public",table:"invoice_items"},loadCloud).subscribe()}
